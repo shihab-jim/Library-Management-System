@@ -1,0 +1,54 @@
+﻿@model List<BLL.DTOs.BookDTO>
+
+@{
+    ViewData["Title"] = "Books";
+}
+
+<h2>Books</h2>
+
+@if (TempData["Msg"] != null)
+{
+    <p style="color:green">@TempData["Msg"]</p>
+}
+
+<p>
+    <a href="/Book/Create">Create New Book</a> |
+    <a href="/Auth/Dashboard">Back to Dashboard</a>
+</p>
+
+<form method="get">
+    <input type="text" name="search" value="@ViewBag.Search" placeholder="Search book..." />
+    <button type="submit">Search</button>
+    <a href="/Book/Index">Clear</a>
+</form>
+
+<br />
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Title</th>
+        <th>ISBN</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Total Copies</th>
+        <th>Available Copies</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Title</td>
+            <td>@item.Isbn</td>
+            <td>@item.AuthorName</td>
+            <td>@item.CategoryName</td>
+            <td>@item.TotalCopies</td>
+            <td>@item.AvailableCopies</td>
+            <td>
+                <a href="/Book/Details/@item.BookId">Details</a> |
+                <a href="/Book/Edit/@item.BookId">Edit</a> |
+                <a href="/Book/Delete/@item.BookId">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

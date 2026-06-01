@@ -1,0 +1,54 @@
+﻿@model BLL.DTOs.BookDTO
+
+@{
+    ViewData["Title"] = "Create Book";
+}
+
+<h2>Create Book</h2>
+
+@if (TempData["Msg"] != null)
+{
+    <p style="color:red">@TempData["Msg"]</p>
+}
+
+<form method="post">
+    <div>
+        <label>Title</label><br />
+        <input type="text" name="Title" />
+        @Html.ValidationMessageFor(x => x.Title)
+    </div>
+
+    <div>
+        <label>ISBN</label><br />
+        <input type="text" name="Isbn" />
+        @Html.ValidationMessageFor(x => x.Isbn)
+    </div>
+
+    <div>
+        <label>Author Name</label><br />
+        <input type="text" name="AuthorName" />
+        @Html.ValidationMessageFor(x => x.AuthorName)
+    </div>
+
+    <div>
+        <label>Category Name</label><br />
+        <input type="text" name="CategoryName" />
+        @Html.ValidationMessageFor(x => x.CategoryName)
+    </div>
+
+    <div>
+        <label>Total Copies</label><br />
+        <input type="number" name="TotalCopies" />
+        @Html.ValidationMessageFor(x => x.TotalCopies)
+    </div>
+
+    <div>
+        <label>Available Copies</label><br />
+        <input type="number" name="AvailableCopies" />
+        @Html.ValidationMessageFor(x => x.AvailableCopies)
+    </div>
+
+    <br />
+    <button type="submit">Save</button>
+    <a href="/Book/Index">Back</a>
+</form>

@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h2>Dashboard</h2>
+
+@if (TempData["Msg"] != null)
+{
+    <p>@TempData["Msg"]</p>
+}
+
+<p>Welcome to Library Management System</p>
+
+<ul>
+    <li><a href="/Book/Index">Manage Books</a></li>
+    <li><a href="/Student/Index">Manage Students</a></li>
+    <li><a href="/Borrow/Index">Borrow Records</a></li>
+    <li><a href="/Dashboard/Index">Report Dashboard</a></li>
+    <li><a href="/Auth/Logout">Logout</a></li>
+</ul>

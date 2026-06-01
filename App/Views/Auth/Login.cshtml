@@ -1,0 +1,30 @@
+﻿@model BLL.DTOs.LoginDTO
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+@if (TempData["Msg"] != null)
+{
+    <span class="alert @TempData["Class"]">@TempData["Msg"]</span>
+    <br />
+    <br />
+}
+
+<form method="post">
+    <h2>Login</h2>
+
+    <div class="col-md-6 align-content-center">
+        <input type="text" placeholder="Email" name="Email" class="form-control" />
+        <span class="text-danger">@Html.ValidationMessage("Email")</span>
+
+        <br />
+
+        <input type="password" placeholder="Password" name="Password" class="form-control" />
+        <span class="text-danger">@Html.ValidationMessage("Password")</span>
+
+        <br />
+
+        <input type="submit" value="Login" class="btn btn-primary" />
+    </div>
+</form>

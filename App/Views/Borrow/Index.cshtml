@@ -1,0 +1,66 @@
+﻿@model List<BLL.DTOs.BorrowRecordDTO>
+
+@{
+    ViewData["Title"] = "Borrow Records";
+}
+
+<h2>Borrow Records</h2>
+
+@if (TempData["Msg"] != null)
+{
+    <p style="color:green">@TempData["Msg"]</p>
+}
+
+<p>
+    <a href="/Borrow/BorrowBook">Borrow Book</a> |
+    <a href="/Borrow/Overdue">Overdue Books</a> |
+    <a href="/Auth/Dashboard">Back to Dashboard</a>
+</p>
+
+<form method="get">
+    <input type="text" name="search" value="@ViewBag.Search" placeholder="Search records..." />
+    <button type="submit">Search</button>
+    <a href="/Borrow/Index">Clear</a>
+</form>
+
+<br />
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Student No</th>
+        <th>Student Name</th>
+        <th>Book</th>
+        <th>Borrow Date</th>
+        <th>Due Date</th>
+        <th>Return Date</th>
+        <th>Status</th>
+        <th>Fine</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.StudentNo</td>
+            <td>@item.StudentName</td>
+            <td>@item.BookTitle</td>
+            <td>@item.BorrowDate.ToShortDateString()</td>
+            <td>@item.DueDate.ToShortDateString()</td>
+            <td>
+                @(item.ReturnDate == null ? "Not Returned" : item.ReturnDate.Value.ToShortDateString())
+            </td>
+            <td>@item.Status</td>
+            <td>@item.FineAmount</td>
+            <td>
+                @if (item.Status == "Issued")
+                {
+                    <a href="/Borrow/ReturnBook/@item.BorrowRecordId">Return</a>
+                }
+                else
+                {
+                    <span>Returned</span>
+                }
+            </td>
+        </tr>
+    }
+</table>

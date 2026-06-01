@@ -1,0 +1,50 @@
+﻿@model List<BLL.DTOs.StudentDTO>
+
+@{
+    ViewData["Title"] = "Students";
+}
+
+<h2>Students</h2>
+
+@if (TempData["Msg"] != null)
+{
+    <p style="color:green">@TempData["Msg"]</p>
+}
+
+<p>
+    <a href="/Student/Create">Create New Student</a> |
+    <a href="/Auth/Dashboard">Back to Dashboard</a>
+</p>
+
+<form method="get">
+    <input type="text" name="search" value="@ViewBag.Search" placeholder="Search student..." />
+    <button type="submit">Search</button>
+    <a href="/Student/Index">Clear</a>
+</form>
+
+<br />
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Student No</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.StudentNo</td>
+            <td>@item.Name</td>
+            <td>@item.Email</td>
+            <td>@item.Phone</td>
+            <td>
+                <a href="/Student/Details/@item.StudentId">Details</a> |
+                <a href="/Student/Edit/@item.StudentId">Edit</a> |
+                <a href="/Student/Delete/@item.StudentId">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,40 @@
+﻿@model BLL.DTOs.BorrowRecordDTO
+
+@{
+    ViewData["Title"] = "Return Book";
+}
+
+<h2>Return Book</h2>
+
+<p>Are you sure you want to return this book?</p>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Student</th>
+        <td>@Model.StudentNo - @Model.StudentName</td>
+    </tr>
+    <tr>
+        <th>Book</th>
+        <td>@Model.BookTitle</td>
+    </tr>
+    <tr>
+        <th>Borrow Date</th>
+        <td>@Model.BorrowDate.ToShortDateString()</td>
+    </tr>
+    <tr>
+        <th>Due Date</th>
+        <td>@Model.DueDate.ToShortDateString()</td>
+    </tr>
+    <tr>
+        <th>Status</th>
+        <td>@Model.Status</td>
+    </tr>
+</table>
+
+<br />
+
+<form method="post" action="/Borrow/ReturnConfirmed">
+    <input type="hidden" name="BorrowRecordId" value="@Model.BorrowRecordId" />
+    <button type="submit">Return Book</button>
+    <a href="/Borrow/Index">Cancel</a>
+</form>

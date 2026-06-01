@@ -1,0 +1,37 @@
+﻿@model BLL.DTOs.BookDTO
+
+@{
+    ViewData["Title"] = "Book Details";
+}
+
+<h2>Book Details</h2>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Title</th>
+        <td>@Model.Title</td>
+    </tr>
+    <tr>
+        <th>ISBN</th>
+        <td>@Model.Isbn</td>
+    </tr>
+    <tr>
+        <th>Author</th>
+        <td>@Model.AuthorName</td>
+    </tr>
+    <tr>
+        <th>Category</th>
+        <td>@Model.CategoryName</td>
+    </tr>
+    <tr>
+        <th>Total Copies</th>
+        <td>@Model.TotalCopies</td>
+    </tr>
+    <tr>
+        <th>Available Copies</th>
+        <td>@Model.AvailableCopies</td>
+    </tr>
+</table>
+
+<br />
+<a href="/Book/Index">Back</a>

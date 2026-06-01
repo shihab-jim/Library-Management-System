@@ -1,0 +1,42 @@
+﻿@model BLL.DTOs.StudentDTO
+
+@{
+    ViewData["Title"] = "Create Student";
+}
+
+<h2>Create Student</h2>
+
+@if (TempData["Msg"] != null)
+{
+    <p style="color:red">@TempData["Msg"]</p>
+}
+
+<form method="post">
+    <div>
+        <label>Student No</label><br />
+        <input type="text" name="StudentNo" />
+        @Html.ValidationMessageFor(x => x.StudentNo)
+    </div>
+
+    <div>
+        <label>Name</label><br />
+        <input type="text" name="Name" />
+        @Html.ValidationMessageFor(x => x.Name)
+    </div>
+
+    <div>
+        <label>Email</label><br />
+        <input type="email" name="Email" />
+        @Html.ValidationMessageFor(x => x.Email)
+    </div>
+
+    <div>
+        <label>Phone</label><br />
+        <input type="text" name="Phone" />
+        @Html.ValidationMessageFor(x => x.Phone)
+    </div>
+
+    <br />
+    <button type="submit">Save</button>
+    <a href="/Student/Index">Back</a>
+</form>

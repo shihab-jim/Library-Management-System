@@ -1,0 +1,48 @@
+﻿@model BLL.DTOs.DashboardDTO
+
+@{
+    ViewData["Title"] = "Report Dashboard";
+}
+
+<h2>Report Dashboard</h2>
+
+<p>
+    <a href="/Auth/Dashboard">Back to Main Dashboard</a>
+</p>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Total Books</th>
+        <td>@Model.TotalBooks</td>
+    </tr>
+
+    <tr>
+        <th>Total Students</th>
+        <td>@Model.TotalStudents</td>
+    </tr>
+
+    <tr>
+        <th>Total Borrow Records</th>
+        <td>@Model.TotalBorrowRecords</td>
+    </tr>
+
+    <tr>
+        <th>Total Issued Books</th>
+        <td>@Model.TotalIssuedBooks</td>
+    </tr>
+
+    <tr>
+        <th>Total Returned Books</th>
+        <td>@Model.TotalReturnedBooks</td>
+    </tr>
+
+    <tr>
+        <th>Total Overdue Books</th>
+        <td>@Model.TotalOverdueBooks</td>
+    </tr>
+
+    <tr>
+        <th>Total Fine Amount</th>
+        <td>@Model.TotalFineAmount</td>
+    </tr>
+</table>

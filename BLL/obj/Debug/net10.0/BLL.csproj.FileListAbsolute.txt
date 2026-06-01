@@ -1,0 +1,15 @@
+D:\.net practice\LibraryManagementSystem\BLL\bin\Debug\net10.0\BLL.deps.json
+D:\.net practice\LibraryManagementSystem\BLL\bin\Debug\net10.0\BLL.dll
+D:\.net practice\LibraryManagementSystem\BLL\bin\Debug\net10.0\BLL.pdb
+D:\.net practice\LibraryManagementSystem\BLL\bin\Debug\net10.0\DAL.dll
+D:\.net practice\LibraryManagementSystem\BLL\bin\Debug\net10.0\DAL.pdb
+D:\.net practice\LibraryManagementSystem\BLL\obj\Debug\net10.0\BLL.csproj.AssemblyReference.cache
+D:\.net practice\LibraryManagementSystem\BLL\obj\Debug\net10.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\.net practice\LibraryManagementSystem\BLL\obj\Debug\net10.0\BLL.AssemblyInfoInputs.cache
+D:\.net practice\LibraryManagementSystem\BLL\obj\Debug\net10.0\BLL.AssemblyInfo.cs
+D:\.net practice\LibraryManagementSystem\BLL\obj\Debug\net10.0\BLL.csproj.CoreCompileInputs.cache
+D:\.net practice\LibraryManagementSystem\BLL\obj\Debug\net10.0\BLL.csproj.Up2Date
+D:\.net practice\LibraryManagementSystem\BLL\obj\Debug\net10.0\BLL.dll
+D:\.net practice\LibraryManagementSystem\BLL\obj\Debug\net10.0\refint\BLL.dll
+D:\.net practice\LibraryManagementSystem\BLL\obj\Debug\net10.0\BLL.pdb
+D:\.net practice\LibraryManagementSystem\BLL\obj\Debug\net10.0\ref\BLL.dll

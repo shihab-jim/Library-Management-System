@@ -1,0 +1,28 @@
+﻿@model BLL.DTOs.BookDTO
+
+@{
+    ViewData["Title"] = "Delete Book";
+}
+
+<h2>Delete Book</h2>
+
+<p>Are you sure you want to delete this book?</p>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Title</th>
+        <td>@Model.Title</td>
+    </tr>
+    <tr>
+        <th>ISBN</th>
+        <td>@Model.Isbn</td>
+    </tr>
+</table>
+
+<br />
+
+<form method="post" action="/Book/DeleteConfirmed">
+    <input type="hidden" name="BookId" value="@Model.BookId" />
+    <button type="submit">Delete</button>
+    <a href="/Book/Index">Cancel</a>
+</form>

@@ -1,0 +1,56 @@
+﻿@model BLL.DTOs.BookDTO
+
+@{
+    ViewData["Title"] = "Edit Book";
+}
+
+<h2>Edit Book</h2>
+
+@if (TempData["Msg"] != null)
+{
+    <p style="color:red">@TempData["Msg"]</p>
+}
+
+<form method="post">
+    <input type="hidden" name="BookId" value="@Model.BookId" />
+
+    <div>
+        <label>Title</label><br />
+        <input type="text" name="Title" value="@Model.Title" />
+        @Html.ValidationMessageFor(x => x.Title)
+    </div>
+
+    <div>
+        <label>ISBN</label><br />
+        <input type="text" name="Isbn" value="@Model.Isbn" />
+        @Html.ValidationMessageFor(x => x.Isbn)
+    </div>
+
+    <div>
+        <label>Author Name</label><br />
+        <input type="text" name="AuthorName" value="@Model.AuthorName" />
+        @Html.ValidationMessageFor(x => x.AuthorName)
+    </div>
+
+    <div>
+        <label>Category Name</label><br />
+        <input type="text" name="CategoryName" value="@Model.CategoryName" />
+        @Html.ValidationMessageFor(x => x.CategoryName)
+    </div>
+
+    <div>
+        <label>Total Copies</label><br />
+        <input type="number" name="TotalCopies" value="@Model.TotalCopies" />
+        @Html.ValidationMessageFor(x => x.TotalCopies)
+    </div>
+
+    <div>
+        <label>Available Copies</label><br />
+        <input type="number" name="AvailableCopies" value="@Model.AvailableCopies" />
+        @Html.ValidationMessageFor(x => x.AvailableCopies)
+    </div>
+
+    <br />
+    <button type="submit">Update</button>
+    <a href="/Book/Index">Back</a>
+</form>

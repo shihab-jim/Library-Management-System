@@ -1,0 +1,44 @@
+﻿@model BLL.DTOs.StudentDTO
+
+@{
+    ViewData["Title"] = "Edit Student";
+}
+
+<h2>Edit Student</h2>
+
+@if (TempData["Msg"] != null)
+{
+    <p style="color:red">@TempData["Msg"]</p>
+}
+
+<form method="post">
+    <input type="hidden" name="StudentId" value="@Model.StudentId" />
+
+    <div>
+        <label>Student No</label><br />
+        <input type="text" name="StudentNo" value="@Model.StudentNo" />
+        @Html.ValidationMessageFor(x => x.StudentNo)
+    </div>
+
+    <div>
+        <label>Name</label><br />
+        <input type="text" name="Name" value="@Model.Name" />
+        @Html.ValidationMessageFor(x => x.Name)
+    </div>
+
+    <div>
+        <label>Email</label><br />
+        <input type="email" name="Email" value="@Model.Email" />
+        @Html.ValidationMessageFor(x => x.Email)
+    </div>
+
+    <div>
+        <label>Phone</label><br />
+        <input type="text" name="Phone" value="@Model.Phone" />
+        @Html.ValidationMessageFor(x => x.Phone)
+    </div>
+
+    <br />
+    <button type="submit">Update</button>
+    <a href="/Student/Index">Back</a>
+</form>

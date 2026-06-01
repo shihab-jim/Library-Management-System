@@ -1,0 +1,53 @@
+﻿@model BLL.DTOs.BorrowRecordDTO
+
+@{
+    ViewData["Title"] = "Borrow Book";
+}
+
+<h2>Borrow Book</h2>
+
+@if (TempData["Msg"] != null)
+{
+    <p style="color:red">@TempData["Msg"]</p>
+}
+
+<form method="post">
+    <div>
+        <label>Student</label><br />
+        <select name="StudentId">
+            <option value="">-- Select Student --</option>
+
+            @foreach (var student in ViewBag.Students)
+            {
+                <option value="@student.StudentId">
+                    @student.StudentNo - @student.Name
+                </option>
+            }
+        </select>
+
+        @Html.ValidationMessageFor(x => x.StudentId)
+    </div>
+
+    <br />
+
+    <div>
+        <label>Book</label><br />
+        <select name="BookId">
+            <option value="">-- Select Book --</option>
+
+            @foreach (var book in ViewBag.Books)
+            {
+                <option value="@book.BookId">
+                    @book.Title - Available: @book.AvailableCopies
+                </option>
+            }
+        </select>
+
+        @Html.ValidationMessageFor(x => x.BookId)
+    </div>
+
+    <br />
+
+    <button type="submit">Borrow</button>
+    <a href="/Borrow/Index">Back</a>
+</form>
